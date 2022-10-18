@@ -44,12 +44,17 @@ function sin(para1){
     let sini = para1.indexOf('sin');
 
     while(sini != -1){
+        //getting number before sin
         let num1 = apara.slice(0,sini);
         let num1s = num1.join("");
         console.log(num1s);
+        
+        //getting number after sin(x)
         let numremain = apara.slice(sini+3);
         let numremains = numremain.join("");
         console.log(numremains);
+        
+        //getting number inside sin function
         let numreqi2 = numremain.indexOf(')');
         let numclacs = (numremain.slice(0,numreqi2+1)).join("");
         console.log(numclacs);
@@ -63,6 +68,7 @@ function sin(para1){
         else{
             nums = num1s + ((Math.round((Math.sin(parseFloat(eval(numclacs))))*100))/100).toString() + numreqi3.join("");
         }
+        
         para1 = nums;
         apara = para1.split("");
         sini = para1.indexOf('sin');
